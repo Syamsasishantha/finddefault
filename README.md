@@ -45,3 +45,60 @@ The dataset is highly unbalanced, the positive class (frauds) account for 0.172%
 
     **A** The percentage of fradulent transactions (0.172%) very less, thus we have an highly imbalanced dataset.
 ![Data Chart 1](visuals/transactionclassdistributionbarchart1.png)
+* #### Amount per transaction by class.
+
+    **B** Amount of transactions between legit & fraud differs by a huge margin.
+
+    ![Data Chart 1](visuals/amountpertransactionbyclass2.png)
+    
+* #### Time of transaction vs amount by class
+
+    **C** The fraud transactions seems to have amount not more than 2500.
+
+    ![Data Chart 2](visuals/timeoftransactionvsamountbyclass3.png)
+    
+
+## 4.0 Model Evaluation
+
+We have used Keras Autoencoder to create a deep learning model by training it with 20% of dataset and loading the most optimized result to the data model.
+
+#### Model Loss
+
+   ![Line Chart 1](visuals/modelloss4.png)
+
+
+#### Recall vs Precision
+   
+   ![Line Chart 2](visuals/recallvsprecision7.png)
+   
+   
+#### Precision for different threshold values
+   
+   ![Line Chart 3](visuals/precisionfordifferentthresholdvalues8.png)
+   
+   
+#### Recall for different threshold values
+   
+   ![Line Chart 4](visuals/recallfordifferentthresholdvalues9.png)
+
+
+
+## 5.0 Model Prediction
+
+In order to predict whether or not a new/unseen transaction is normal or fraudulent, we will calculate the reconstruction error from the transaction data itself. If the error is larger than a predefined threshold, we’ll mark it as a fraud (since our model should have a low error on normal transactions). We have picked a default value now for the threshold, that can be increased further as per requirements.
+
+Threshold value: 3.1
+
+#### Precision for different threshold values( Time of transaction vs Amount by Class)
+
+   ![Chart 1](visuals/timeoftransactionvsamountbyclass3.png)
+   
+#### Confusion Matrix
+
+   ![Chart 2](visuals/confusionmatrix11.png)
+
+
+## 6.0 Conclusions
+
+The data is extremaly unbalanced, however it was possible to make all the required analysis, prepare the data and create a highly accurate machine learning model with Keras. The model can now be used to predict the fraudulent & legitimate transactions from a given dataset.
+
